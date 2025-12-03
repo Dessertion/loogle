@@ -12,7 +12,7 @@ import os
 import select
 
 
-hostName = "localhost"
+hostName = "0.0.0.0"
 serverPort = 8088
 
 blurb = open("./blurb.html","rb").read()
@@ -60,8 +60,8 @@ class Loogle():
     def start(self):
         self.starting = True
         self.loogle = subprocess.Popen(
-            #[".lake/build/bin/loogle","--json", "--interactive", "--module","Init.Data.List.Basic"],
-            [".lake/build/bin/loogle","--json", "--interactive"],
+            [".lake/build/bin/loogle","--json", "--interactive", "--module","Matroid"],
+            # [".lake/build/bin/loogle","--json", "--interactive"],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
         )
